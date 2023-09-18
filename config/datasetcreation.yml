@@ -1,0 +1,23 @@
+dataset:
+  base_dir: dataset
+  file_name: conversations.csv
+slack:
+  limit: 1000
+  min_replies: 5
+  min_words: 200
+  channels:
+    - CL5TB9XRT # Skrill critical issues
+    - CPXG52NEB # Paysafe dev community
+    - CNT5KUNBV # FE community
+    - C01H5204EHG # help-gitlab
+    - CVCL1234J # paysafe-wallet-mobile-bff
+    - CE8Q4RX2Q # announcments
+    - C03J33NLSDB # Sofia events
+  conversations_url: https://slack.com/api/conversations.history?channel={channel_id}&include_all_metadata=1
+  replies_url: https://slack.com/api/conversations.replies?channel={channel_id}&ts={ts}
+
+summarization:
+  min_length: 20
+  max_length: 120
+  tokenizer_name: facebook/bart-large-cnn
+  model_name: facebook/bart-large-cnn
