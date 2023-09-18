@@ -1,0 +1,4 @@
+data:
+  base_dir: dataset/transcribtions
+  clean_data_dir: dataset/cleaned
+  summaries_dir: dataset/summaries

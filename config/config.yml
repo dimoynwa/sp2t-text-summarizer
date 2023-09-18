@@ -1,0 +1,16 @@
+model:
+  name: facebook/bart-large-cnn
+  padding: true
+  truncation: true
+  min_length: 20
+  max_length: 150
+
+mlflow:
+  tracking_uri: http://localhost:5000
+  local_dir: mlflow/models
+  log_model: true
+  registered_model_name: text_summarization
+
+data:
+  clean_data_dir: dataset/cleaned
+  summaries_dir: dataset/summaries
