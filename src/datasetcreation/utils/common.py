@@ -51,6 +51,7 @@ def load_bin(path: Path):
 @ensure_annotations
 def get_slack_auth_token() -> str:
     auth_token = os.environ.get('SLACK_OAUTH_USER_TOKEN')
+    auth_token = 'xoxp-484990737874-988535149684-5900317006245-fa666baa22d3a46363b2f5ad068c05fb'
     if not auth_token:
         raise BoxValueError('Please provice SLACK_OAUTH_USER_TOKEN environment variable')
     logger.info(f'SLACK_OAUTH_USER_TOKEN found: {auth_token[:2]}')

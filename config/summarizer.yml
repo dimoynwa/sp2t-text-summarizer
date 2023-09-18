@@ -1,5 +1,5 @@
 model:
-  name: facebook/bart-large-cnn
+  name: knkarthick/MEETING_SUMMARY
   padding: true
   truncation: true
   min_length: 20
@@ -10,6 +10,7 @@ mlflow:
   tracking_uri: http://localhost:5000
   local_dir: mlflow/models
   log_model: true
+  save_model: false
   registered_model_name: text_summarization
 
 dagshub:
