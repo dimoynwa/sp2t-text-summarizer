@@ -1,4 +1,7 @@
 mlflow:
-  # tracking_uri: https://dagshub.com/dimoynwa/test-summarizer.mlflow
-  tracking_uri: http://localhost:5000
-  model_uri: 'models:/text_summarization/1'
+  tracking_uri: https://dagshub.com/dimoynwa/sp2t-text-summarizer.mlflow
+  # tracking_uri: http://localhost:5000
+  model_uri: 'models:/text_summarization/Staging'
+
+predictions:
+  base_dir: dataset/predictions
