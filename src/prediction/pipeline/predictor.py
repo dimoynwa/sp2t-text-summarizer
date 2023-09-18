@@ -6,15 +6,22 @@ from ensure import ensure_annotations
 class Predictor:
     def __init__(self, config_manager: ConfigManager) -> None:
         self.config_manager = config_manager
+        mlflow.set_tracking_uri(self.config_manager.config.mlflow.tracking_uri)
+        logger.info(f'MLFlow initialized with tracking uri: {self.config_manager.config.mlflow.tracking_uri}')
+        self.pyfunc_loaded = mlflow.pyfunc.load_model(self.config_manager.config.mlflow.model_uri)
 
     @ensure_annotations
     def predict(self, text: str) -> list:
-        pyfunc_loaded = mlflow.pyfunc.load_model(self.config_manager.config.mlflow.model_uri)
-        logger.info(f'Predicting with mode {self.config_manager.config.mlflow.model_uri} for text: \n{text}')
+        logger.info(f'Predicting with model {self.config_manager.config.mlflow.model_uri} for text: \n{text}')
         # inference_config will be applied
-        result = pyfunc_loaded.predict(text)
+        result = self.pyfunc_loaded.predict(text)
         return result
     
+    def predict_generator(self, generator) -> None:
+        for file_id, content in generator:
+            prediction = self.predict(content)
+            yield file_id, prediction
+
 if __name__ == '__main__':
     cm = ConfigManager()
     predictor = Predictor(cm)

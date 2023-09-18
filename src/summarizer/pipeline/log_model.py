@@ -32,9 +32,10 @@ class MlFlowLogger:
                                   registered_model_name = self.config_manager.config.mlflow.registered_model_name)
 
             # Saving inference_config with the model
-            mlflow.transformers.save_model(
-                pipe,
-                path=Path(self.config_manager.config.mlflow.local_dir, self.config_manager.config.model.name + str(time.time())),
-                inference_config=inference_config
-            )
+            if self.config_manager.config.mlflow.save_model:
+                mlflow.transformers.save_model(
+                    pipe,
+                    path=Path(self.config_manager.config.mlflow.local_dir, self.config_manager.config.model.name + str(time.time())),
+                    inference_config=inference_config
+                )
     
