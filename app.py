@@ -4,6 +4,12 @@ from flask import Flask, render_template, request, Response
 from prediction.pipeline import PredictionPipeline
 import uuid
 from threading import Thread
+import spacy
+
+# Load the 'en_core_web_sm' model
+nlp = spacy.load('en_core_web_sm')
+
+# If it doesn't raise an error, the model is successfully loaded.
 
 app = Flask(__name__)
 recorder = None  # Global recorder instance
