@@ -36,7 +36,7 @@ class AudioRecorder:
         self.stream.close()
         self.audio.terminate()
 
-    def save_audio(self, output_filename="output.wav"):
+    def save_audio(self, output_filename="output.mp3"):
         with wave.open(output_filename, "wb") as wf:
             wf.setnchannels(self.CHANNELS)
             wf.setsampwidth(self.audio.get_sample_size(self.FORMAT))
