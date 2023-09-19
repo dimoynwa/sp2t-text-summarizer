@@ -11,9 +11,6 @@ class Predictor:
         create_directories([self.config_manager.config.predictions.base_dir])
         mlflow.set_tracking_uri(self.config_manager.config.mlflow.tracking_uri)
 
-        os.environ['MLFLOW_TRACKING_USERNAME'] = 'dimoynwa'
-        os.environ['MLFLOW_TRACKING_PASSWORD'] = 'b438e26f2c75bb68347e97b2096330de3ad1e94f'
-
         logger.info(f"MLFLOW_TRACKING_USERNAME: {os.environ['MLFLOW_TRACKING_USERNAME'][:2]}")
         logger.info(f"MLFLOW_TRACKING_PASSWORD: {os.environ['MLFLOW_TRACKING_PASSWORD'][:2]}")
         
