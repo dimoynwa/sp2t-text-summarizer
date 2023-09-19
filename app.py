@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, Response
 from prediction.pipeline import PredictionPipeline
 import uuid
+from threading import Thread
 
 app = Flask(__name__)
 
@@ -18,14 +19,24 @@ async def predict_file():
     file = request.files['file']
 
     file_id = str(uuid.uuid4())
-    
-    await predictor_pipeline.predict_async(file_id, file)
+
+    """Return first the response and tie the predict_async to a thread"""
+    Thread(target = predictor_pipeline.predict_async, args=(file_id, file)).start()
+    # await predictor_pipeline.predict_async(file_id, file)
 
     return Response(
-        "{'id': \"" +  file_id + "\"}",
+        "{\n\t\"id\": \"" +  file_id + "\"\n}",
         content_type='application/json',
         status=202,
     )
+
+@app.route('/predict/<pred_id>', methods=['GET'])
+def get_predict_content(pred_id):
+    assert pred_id == request.view_args['pred_id']
+    prediction = predictor_pipeline.get_prediction(pred_id)
+    if not prediction:
+        return Response(content_type='application/json', status=102)
+    return prediction
 
 if __name__ == '__main__':
     # app.run('0.0.0.0', port='8080', debug=True)
