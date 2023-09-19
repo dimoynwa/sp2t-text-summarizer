@@ -39,7 +39,7 @@ def get_predict_content(pred_id):
     if not prediction:
         return Response(content_type='application/json', status=102)
     return prediction
-PredictionPipeline()
+
 
 @app.route('/start', methods=['GET'])
 def get_data():
