@@ -27,6 +27,6 @@ botocore
 langchain
 spacy
 torchvision
-pyaudio
+PyAudio
 
 -e .
