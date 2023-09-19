@@ -28,4 +28,5 @@ def stop_record():
         return jsonify({'message': 'No recording in progress'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run('0.0.0.0', port='8080', debug=True)
+    app.run('0.0.0.0', port='8080')
