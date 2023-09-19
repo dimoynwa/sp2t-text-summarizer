@@ -7,8 +7,9 @@ from threading import Thread
 
 app = Flask(__name__)
 recorder = None  # Global recorder instance
-predictor_pipeline = 
-@app.route('/predict', methods=['POST'])
+predictor_pipeline = PredictionPipeline()
+
+@app.route('/predict', methods=['POST']) 
 def predict():
     text = request.json
     print(text)
