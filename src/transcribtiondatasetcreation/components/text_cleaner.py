@@ -1,7 +1,7 @@
 import re
 from ensure import ensure_annotations
-from transcribtiondatasetcreation.components import nlp
-from transcribtiondatasetcreation import logger
+from src.transcribtiondatasetcreation.components import nlp
+from src.transcribtiondatasetcreation import logger
 
 @ensure_annotations
 def clean_text(input_text: str) -> str:

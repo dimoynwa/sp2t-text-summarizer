@@ -1,4 +1,4 @@
-from summarizer.pipeline import SummarizerPipeline
+from src.summarizer.pipeline import SummarizerPipeline
 
 if __name__ == '__main__':
     pipeline = SummarizerPipeline()

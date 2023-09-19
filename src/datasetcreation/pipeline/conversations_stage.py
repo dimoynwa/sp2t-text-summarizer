@@ -1,8 +1,8 @@
-from datasetcreation.config.configuration import ConfigManager
-from datasetcreation import logger
+from src.datasetcreation.config.configuration import ConfigManager
+from src.datasetcreation import logger
 import requests
 from ensure import ensure_annotations
-from datasetcreation.utils.common import get_slack_auth_token
+from src.datasetcreation.utils.common import get_slack_auth_token
 import time
 
 STAGE_NAME = "Fetch conversations"

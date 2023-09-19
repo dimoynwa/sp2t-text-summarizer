@@ -1,5 +1,5 @@
-from transcribtiondatasetcreation.utils.common import read_yaml, create_directories
-from transcribtiondatasetcreation.constants import CONFIG_FILE_PATH
+from src.transcribtiondatasetcreation.utils.common import read_yaml, create_directories
+from src.transcribtiondatasetcreation.constants import CONFIG_FILE_PATH
 from pathlib import Path
 import os
 import sys

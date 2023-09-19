@@ -1,10 +1,10 @@
-from datasetcreation.config.configuration import ConfigManager
-from datasetcreation.pipeline.conversations_stage import ConversationsStage
-from datasetcreation.pipeline.replies_stage import RepliesStage
-from datasetcreation.pipeline.preprocess_thread import Preprocess
-from datasetcreation.pipeline.create_dataset import Dataset
+from src.datasetcreation.config.configuration import ConfigManager
+from src.datasetcreation.pipeline.conversations_stage import ConversationsStage
+from src.datasetcreation.pipeline.replies_stage import RepliesStage
+from src.datasetcreation.pipeline.preprocess_thread import Preprocess
+from src.datasetcreation.pipeline.create_dataset import Dataset
 
-from datasetcreation import logger
+from src.datasetcreation import logger
 
 class DatasetCreationPipeline:
     def __init__(self) -> None:

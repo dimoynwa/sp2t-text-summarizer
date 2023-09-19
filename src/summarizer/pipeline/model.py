@@ -1,5 +1,5 @@
-from summarizer import logger
-from summarizer.config.configuration import ConfigManager
+from src.summarizer import logger
+from src.summarizer.config.configuration import ConfigManager
 
 from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 

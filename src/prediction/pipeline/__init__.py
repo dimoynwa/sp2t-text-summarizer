@@ -1,14 +1,14 @@
 import mlflow
-from prediction.utils.common import read_yaml
-from prediction.constants import CONFIG_FILE_PATH
-from prediction.config.configuration import ConfigManager
+from src.prediction.utils.common import read_yaml
+from src.prediction.constants import CONFIG_FILE_PATH
+from src.prediction.config.configuration import ConfigManager
 from pathlib import Path
-from prediction import logger
+from src.prediction import logger
 
-from prediction.pipeline.read_file import Reader
-from prediction.pipeline.data_clean import Cleaner
-from prediction.pipeline.predictor import Predictor
-from prediction.pipeline.save_preiction import PredictionSaver
+from src.prediction.pipeline.read_file import Reader
+from src.prediction.pipeline.data_clean import Cleaner
+from src.prediction.pipeline.predictor import Predictor
+from src.prediction.pipeline.save_preiction import PredictionSaver
 
 config = read_yaml(Path(CONFIG_FILE_PATH))
 

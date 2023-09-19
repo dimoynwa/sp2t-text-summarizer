@@ -1,7 +1,7 @@
-from transcribtiondatasetcreation.config.configuration import ConfigManager
-from transcribtiondatasetcreation import logger
-from transcribtiondatasetcreation.components.text_cleaner import clean_text
-from transcribtiondatasetcreation.pipeline.read_data import DataReader
+from src.transcribtiondatasetcreation.config.configuration import ConfigManager
+from src.transcribtiondatasetcreation import logger
+from src.transcribtiondatasetcreation.components.text_cleaner import clean_text
+from src.transcribtiondatasetcreation.pipeline.read_data import DataReader
 
 class DataCleaner:
     def __init__(self, config_manager: ConfigManager) -> None:

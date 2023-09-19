@@ -1,10 +1,10 @@
-from transcribtiondatasetcreation.config.configuration import ConfigManager
-from transcribtiondatasetcreation import logger
+from src.transcribtiondatasetcreation.config.configuration import ConfigManager
+from src.transcribtiondatasetcreation import logger
 from pathlib import Path
 
-from transcribtiondatasetcreation.pipeline.read_data import DataReader
-from transcribtiondatasetcreation.pipeline.clean_data import DataCleaner
-from transcribtiondatasetcreation.pipeline.name_entities_process import NamedEntitiesProcessor
+from src.transcribtiondatasetcreation.pipeline.read_data import DataReader
+from src.transcribtiondatasetcreation.pipeline.clean_data import DataCleaner
+from src.transcribtiondatasetcreation.pipeline.name_entities_process import NamedEntitiesProcessor
 
 class DataSaver:
     def __init__(self, config_manager: ConfigManager) -> None:

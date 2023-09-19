@@ -1,10 +1,10 @@
 import pandas as pd
-from datasetcreation.config.configuration import ConfigManager
+from src.datasetcreation.config.configuration import ConfigManager
 from pathlib import Path
-from datasetcreation.constants import CSV_DELIMITER
+from src.datasetcreation.constants import CSV_DELIMITER
 from transformers import pipeline, BartTokenizer, BartForConditionalGeneration
 from ensure import ensure_annotations
-from datasetcreation import logger
+from src.datasetcreation import logger
 
 STAGE_NAME = 'Preprocess conversation'
 

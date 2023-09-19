@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
-from summarizer import logger
-from summarizer.config.configuration import ConfigManager
+from src.summarizer import logger
+from src.summarizer.config.configuration import ConfigManager
 from ensure import ensure_annotations
 
 class DataReader:

@@ -1,9 +1,9 @@
-from datasetcreation.config.configuration import ConfigManager
+from src.datasetcreation.config.configuration import ConfigManager
 from ensure import ensure_annotations
 
-from datasetcreation.pipeline.conversations_stage import ConversationsStage
-from datasetcreation.pipeline.replies_stage import RepliesStage
-from datasetcreation import logger
+from src.datasetcreation.pipeline.conversations_stage import ConversationsStage
+from src.datasetcreation.pipeline.replies_stage import RepliesStage
+from src.datasetcreation import logger
 
 import re
 from urllib.parse import urlparse

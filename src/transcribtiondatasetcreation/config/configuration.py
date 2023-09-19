@@ -1,5 +1,5 @@
-from transcribtiondatasetcreation.constants import CONFIG_FILE_PATH
-from transcribtiondatasetcreation.utils.common import read_yaml
+from src.transcribtiondatasetcreation.constants import CONFIG_FILE_PATH
+from src.transcribtiondatasetcreation.utils.common import read_yaml
 
 class ConfigManager:
     def __init__(self, config_file_path=CONFIG_FILE_PATH) -> None:

@@ -1,5 +1,5 @@
-from summarizer import logger
-from summarizer.config.configuration import ConfigManager
+from src.summarizer import logger
+from src.summarizer.config.configuration import ConfigManager
 
 class ModelTrainer:
     def __init__(self, config_manager: ConfigManager) -> None:

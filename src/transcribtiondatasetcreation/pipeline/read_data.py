@@ -1,5 +1,5 @@
-from transcribtiondatasetcreation.config.configuration import ConfigManager
-from transcribtiondatasetcreation import logger
+from src.transcribtiondatasetcreation.config.configuration import ConfigManager
+from src.transcribtiondatasetcreation import logger
 from pathlib import Path
 
 class DataReader:

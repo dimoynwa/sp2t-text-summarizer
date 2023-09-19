@@ -1,11 +1,11 @@
-from summarizer import logger
-from summarizer.config.configuration import ConfigManager
+from src.summarizer import logger
+from src.summarizer.config.configuration import ConfigManager
 
-from summarizer.pipeline.data_reader import DataReader
-from summarizer.pipeline.model import ModelCreator
-from summarizer.pipeline.trainer import ModelTrainer
-from summarizer.pipeline.evaluate import ModelEvaluator
-from summarizer.pipeline.log_model import MlFlowLogger
+from src.summarizer.pipeline.data_reader import DataReader
+from src.summarizer.pipeline.model import ModelCreator
+from src.summarizer.pipeline.trainer import ModelTrainer
+from src.summarizer.pipeline.evaluate import ModelEvaluator
+from src.summarizer.pipeline.log_model import MlFlowLogger
 
 class SummarizerPipeline:
     def __init__(self) -> None:

@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
-from speech2text.pipeline.recordnavigator import AudioRecorder
+from src.speech2text.pipeline.recordnavigator import AudioRecorder
 from flask import Flask, render_template, request, Response
-from prediction.pipeline import PredictionPipeline
+from src.prediction.pipeline import PredictionPipeline
 import uuid
 from threading import Thread
 

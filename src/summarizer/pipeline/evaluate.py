@@ -1,10 +1,10 @@
-from summarizer import logger
-from summarizer.config.configuration import ConfigManager
+from src.summarizer import logger
+from src.summarizer.config.configuration import ConfigManager
 from bert_score import score
 
-from summarizer.pipeline.data_reader import DataReader
-from summarizer.pipeline.model import ModelCreator
-from summarizer.pipeline.trainer import ModelTrainer
+from src.summarizer.pipeline.data_reader import DataReader
+from src.summarizer.pipeline.model import ModelCreator
+from src.summarizer.pipeline.trainer import ModelTrainer
 
 class ModelEvaluator:
     def __init__(self, config_manager: ConfigManager) -> None:

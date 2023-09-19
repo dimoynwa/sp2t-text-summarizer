@@ -1,8 +1,8 @@
-from prediction import logger
-from prediction.config.configuration import ConfigManager
+from src.prediction import logger
+from src.prediction.config.configuration import ConfigManager
 
-from transcribtiondatasetcreation.pipeline.clean_data import DataCleaner
-from transcribtiondatasetcreation.pipeline.name_entities_process import NamedEntitiesProcessor
+from src.transcribtiondatasetcreation.pipeline.clean_data import DataCleaner
+from src.transcribtiondatasetcreation.pipeline.name_entities_process import NamedEntitiesProcessor
 
 class Cleaner:
     def __init__(self, config_manager: ConfigManager) -> None:

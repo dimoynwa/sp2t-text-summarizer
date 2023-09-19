@@ -1,5 +1,5 @@
-from prediction import logger
-from prediction.config.configuration import ConfigManager
+from src.prediction import logger
+from src.prediction.config.configuration import ConfigManager
 
 class Reader:
     def __init__(self, config_manager: ConfigManager) -> None:

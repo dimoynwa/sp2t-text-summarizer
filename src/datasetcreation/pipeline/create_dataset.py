@@ -1,11 +1,11 @@
 import pandas as pd
-from datasetcreation.config.configuration import ConfigManager
-from datasetcreation import logger
-from datasetcreation.constants import CSV_DELIMITER
+from src.datasetcreation.config.configuration import ConfigManager
+from src.datasetcreation import logger
+from src.datasetcreation.constants import CSV_DELIMITER
 from ensure import ensure_annotations
-from datasetcreation.utils.common import create_directories
+from src.datasetcreation.utils.common import create_directories
 from pathlib import Path
-from datasetcreation.pipeline.preprocess_thread import Preprocess
+from src.datasetcreation.pipeline.preprocess_thread import Preprocess
 
 STAGE_NAME = 'Create dataset'
 
