@@ -3,8 +3,6 @@ from src.prediction.config.configuration import ConfigManager
 from pathlib import Path
 import json
 
-import json
-
 class PredictionSaver:
     def __init__(self, config_manager: ConfigManager) -> None:
         self.config_manager = config_manager
