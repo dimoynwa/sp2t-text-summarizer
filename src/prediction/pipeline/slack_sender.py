@@ -1,5 +1,5 @@
-from prediction import logger
-from prediction.config.configuration import ConfigManager
+from src.prediction import logger
+from src.prediction.config.configuration import ConfigManager
 from slack_sdk import WebClient
 import os
 
