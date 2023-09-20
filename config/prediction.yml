@@ -5,3 +5,7 @@ mlflow:
 
 predictions:
   base_dir: dataset/predictions
+
+slack:
+  enabled: true
+  channel_id: C05SX48KDGW

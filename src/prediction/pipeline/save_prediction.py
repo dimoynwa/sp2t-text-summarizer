@@ -10,9 +10,11 @@ class PredictionSaver:
     def save_prediction(self, generator):
         for file_id, prediction in generator:
             base_path = Path(self.config_manager.config.predictions.base_dir, file_id + '.txt')
+            prediction_json = json.dumps(prediction[0])
             with open(base_path, 'w', encoding='utf-8') as f:
-                f.write(json.dumps(prediction))
+                f.write(prediction_json)
             logger.info(f'Saved file {file_id}.txt')
+            yield prediction_json
 
     def get_prediction(self, file_id):
         base_path = Path(self.config_manager.config.predictions.base_dir, file_id + '.txt')

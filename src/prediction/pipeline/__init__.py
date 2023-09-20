@@ -10,6 +10,7 @@ from prediction.pipeline.read_file import Reader
 from prediction.pipeline.data_clean import Cleaner
 from prediction.pipeline.predictor import Predictor
 from prediction.pipeline.save_prediction import PredictionSaver
+from prediction.pipeline.slack_sender import SlackSender
 
 config = read_yaml(Path(CONFIG_FILE_PATH))
 
@@ -23,23 +24,24 @@ class PredictionPipeline:
         self._data_cleaner = Cleaner(self.config_manager)
         self._predictor = Predictor(self.config_manager)
         self._data_saver = PredictionSaver(self.config_manager)
+        self._slack_sender = SlackSender(self.config_manager)
 
     def predict(self, content: str, file_id = None):
         if not file_id:
             file_id = uuid.uuid4()
-        self._data_saver.save_prediction(
+        self._slack_sender.send(self._data_saver.save_prediction(
             self._predictor.predict_generator(
                 self._data_cleaner.clean(file_id, content)
             )
-        )
+        ))
     
     def predict_async(self, file_id, file_content):
         content = file_content.decode('utf-8')
-        self._data_saver.save_prediction(
+        self._slack_sender.send(self._data_saver.save_prediction(
             self._predictor.predict_generator(
                 self._data_cleaner.clean(file_id, content)
             )
-        )
+        ))
 
     def get_prediction(self, file_id):
         return self._data_saver.get_prediction(file_id)
