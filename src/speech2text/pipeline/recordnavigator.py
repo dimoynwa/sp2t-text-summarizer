@@ -1,6 +1,6 @@
 import pyaudio
 import wave
-import threading
+from threading import Thread
 
 class AudioRecorder:
     def __init__(self, speech2text_pipeline, chunk=1024, audio_format=pyaudio.paInt16, channels=1, rate=20000, record_seconds=60):
@@ -27,7 +27,7 @@ class AudioRecorder:
 
     def start_audio(self):
         self.isrecording = True
-        self.thread = threading.Thread(target=self._record_audio)
+        self.thread = Thread(target=self._record_audio)
         self.thread.start()
 
     def stop_audio(self):
@@ -44,8 +44,7 @@ class AudioRecorder:
             wf.setframerate(self.RATE)
             wf.writeframes(b"".join(self.frames))
             print(f"Recording saved to {file_id}.wav.")
-        with wave.open(file_id + '.wav', "rb") as wf:
-            self.speech2text_pipeline.transcribe(file_id, wf)
+        Thread(target = self.speech2text_pipeline.transcribe, args=(file_id, "")).start()
         
 if __name__ == "__main__":
     recorder = AudioRecorder()
