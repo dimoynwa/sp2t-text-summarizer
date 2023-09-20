@@ -1,0 +1,7 @@
+transciptions:
+  base_dir: dataset/predictions
+  audio_files_dir: dataset/audio
+  aws_results: dataset/aws-results
+
+s3:
+  bucket_name: dimo-transcribe-hubermanlab-podcasts

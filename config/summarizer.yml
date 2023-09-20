@@ -9,7 +9,7 @@ mlflow:
   tracking_uri: https://dagshub.com/dimoynwa/sp2t-text-summarizer.mlflow
   # tracking_uri: http://localhost:5000
   local_dir: mlflow/models
-  log_model: false
+  log_model: true
   save_model: false
   registered_model_name: text_summarization
 

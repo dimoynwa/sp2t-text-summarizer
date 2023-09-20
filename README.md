@@ -8,3 +8,7 @@ MLFLOW_TRACKING_PASSWORD=******  \
 
 
 282245150475.dkr.ecr.eu-north-1.amazonaws.com/sp2t-text-summarizer
+
+AWS_ACCESS_KEY_ID=***
+AWS_SECRET_ACCESS_KEY_ID=***
+AWS_REGION=***
