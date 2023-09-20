@@ -28,3 +28,6 @@ langchain
 spacy
 torchvision
 pyaudio
+slack_sdk
+slack
+slackclient
