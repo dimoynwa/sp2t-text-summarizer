@@ -27,5 +27,8 @@ botocore
 langchain
 spacy
 torchvision
+slack_sdk
+slack
+slackclient
 
 -e .
