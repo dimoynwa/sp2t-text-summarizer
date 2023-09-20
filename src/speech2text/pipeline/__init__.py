@@ -1,11 +1,11 @@
-from speech2text import logger
-from speech2text.pipeline.read_content import FileRead
-from speech2text.pipeline.save_file import S3Saver
-from speech2text.pipeline.aws_transcribe import TranscriptionJob
-from speech2text.pipeline.aws_transcribe_results import ResultWait
-from speech2text.pipeline.send_for_summary import Summarizer
-from speech2text.config.configuration import ConfigManager
-from speech2text.utils.common import create_directories
+from src.speech2text import logger
+from src.speech2text.pipeline.read_content import FileRead
+from src.speech2text.pipeline.save_file import S3Saver
+from src.speech2text.pipeline.aws_transcribe import TranscriptionJob
+from src.speech2text.pipeline.aws_transcribe_results import ResultWait
+from src.speech2text.pipeline.send_for_summary import Summarizer
+from src.speech2text.config.configuration import ConfigManager
+from src.speech2text.utils.common import create_directories
 
 import boto3
 import os

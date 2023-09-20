@@ -1,5 +1,5 @@
-from speech2text import logger
-from speech2text.config.configuration import ConfigManager
+from src.speech2text import logger
+from src.speech2text.config.configuration import ConfigManager
 import boto3
 import os
 import pandas as pd

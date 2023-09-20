@@ -1,6 +1,6 @@
-from speech2text import logger
-from speech2text.config.configuration import ConfigManager
-from speech2text.utils.common import create_directories
+from src.speech2text import logger
+from src.speech2text.config.configuration import ConfigManager
+from src.speech2text.utils.common import create_directories
 
 
 class FileRead:

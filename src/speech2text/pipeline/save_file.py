@@ -1,6 +1,6 @@
-from speech2text import logger
-from speech2text.config.configuration import ConfigManager
-from speech2text.constants import MP3_FILE_EXT
+from src.speech2text import logger
+from src.speech2text.config.configuration import ConfigManager
+from src.speech2text.constants import MP3_FILE_EXT
 import boto3
 import os
 from botocore.exceptions import ClientError

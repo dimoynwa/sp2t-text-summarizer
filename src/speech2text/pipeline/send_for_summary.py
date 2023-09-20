@@ -1,5 +1,5 @@
-from speech2text import logger
-from speech2text.config.configuration import ConfigManager
+from src.speech2text import logger
+from src.speech2text.config.configuration import ConfigManager
 
 class Summarizer:
     def __init__(self, config_manager: ConfigManager, summary_pipeline) -> None:
