@@ -53,7 +53,7 @@ def get_predict_content(pred_id):
     if not prediction:
         return Response('{ "status": "NOT_PROCESSED_YET" }',
             content_type=APPLICATION_JSON, status=102)
-    return prediction
+    return jsonify({'prediction': prediction})
 
 
 @app.route('/start', methods=['GET'])
