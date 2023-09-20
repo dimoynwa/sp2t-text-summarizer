@@ -3,10 +3,10 @@ from flask import app
 
 import pyaudio
 
-CONFIG_FILE_PATH = Path('config/prediction.yml')
+CONFIG_FILE_PATH = Path('config/speech2text.yml')
+MP3_FILE_EXT = '.mp3'
 # The folder to save uploaded files
 UPLOAD_FOLDER = 'uploads'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 CHUNK = 1024  # Number of frames per buffer
 FORMAT = pyaudio.paInt16  # Audio format (16-bit PCM)

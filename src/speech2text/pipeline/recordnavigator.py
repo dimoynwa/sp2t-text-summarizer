@@ -3,7 +3,7 @@ import wave
 import threading
 
 class AudioRecorder:
-    def __init__(self, chunk=1024, audio_format=pyaudio.paInt16, channels=1, rate=20000, record_seconds=60):
+    def __init__(self, speech2text_pipeline, chunk=1024, audio_format=pyaudio.paInt16, channels=1, rate=20000, record_seconds=60):
         self.CHUNK = chunk
         self.FORMAT = audio_format
         self.CHANNELS = channels
@@ -11,6 +11,7 @@ class AudioRecorder:
         self.RECORD_SECONDS = record_seconds
         self.frames = []
         self.isrecording = False
+        self.speech2text_pipeline = speech2text_pipeline
         self.audio = pyaudio.PyAudio()
 
     def _record_audio(self):
@@ -36,12 +37,15 @@ class AudioRecorder:
         self.stream.close()
         self.audio.terminate()
 
-    def save_audio(self, output_filename="output.wav"):
-        with wave.open(output_filename, "wb") as wf:
+    def save_audio(self, file_id):
+        with wave.open(file_id + '.wav', "wb") as wf:
             wf.setnchannels(self.CHANNELS)
             wf.setsampwidth(self.audio.get_sample_size(self.FORMAT))
             wf.setframerate(self.RATE)
             wf.writeframes(b"".join(self.frames))
-        print(f"Recording saved to {output_filename}.")
+            print(f"Recording saved to {file_id}.wav.")
+        with wave.open(file_id + '.wav', "rb") as wf:
+            self.speech2text_pipeline.transcribe(file_id, wf)
+        
 if __name__ == "__main__":
     recorder = AudioRecorder()
