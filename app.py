@@ -7,7 +7,6 @@ import uuid
 from threading import Thread
 import os
 
-
 APPLICATION_JSON = 'application/json'
 
 app = Flask(__name__)
@@ -34,6 +33,7 @@ async def predict_file():
     if extension == 'txt':
         Thread(target = predictor_pipeline.predict_async, args=(file_id, file.read())).start()
     elif extension == 'wav':
+        file.save(file_id + '.wav')
         Thread(target= speech2text_pipeline.transcribe, args=(file_id, file.read())).start()
     else:
         return Response("{\n\t\"error\": \"" +  f'File Extention {extension} not supporter' + "\"\n}",
@@ -53,7 +53,7 @@ def get_predict_content(pred_id):
     if not prediction:
         return Response('{ "status": "NOT_PROCESSED_YET" }',
             content_type=APPLICATION_JSON, status=102)
-    return prediction
+    return jsonify({'prediction': prediction})
 
 
 @app.route('/start', methods=['GET'])
@@ -77,7 +77,7 @@ def stop_record():
         recorder.save_audio(file_id)
         recorder = None
         
-        return jsonify({'message': 'Recording stopped'})
+        return jsonify({'id': file_id ,'message': 'Recording stopped'})
     else:
         return jsonify({'message': 'No recording in progress'})
 
