@@ -1,6 +1,7 @@
 from prediction import logger
 from prediction.config.configuration import ConfigManager
 from pathlib import Path
+import json
 
 class PredictionSaver:
     def __init__(self, config_manager: ConfigManager) -> None:
@@ -10,7 +11,7 @@ class PredictionSaver:
         for file_id, prediction in generator:
             base_path = Path(self.config_manager.config.predictions.base_dir, file_id + '.txt')
             with open(base_path, 'w', encoding='utf-8') as f:
-                f.write(prediction)
+                f.write(json.dumps(prediction))
             logger.info(f'Saved file {file_id}.txt')
 
     def get_prediction(self, file_id):
